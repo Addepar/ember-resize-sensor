@@ -1,1 +1,0 @@
-export { default } from 'ember-resize-sensor/components/resize-sensor';
