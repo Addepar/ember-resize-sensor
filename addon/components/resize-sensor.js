@@ -7,7 +7,7 @@ export default Ember.Component.extend({
   layout,
   classNames: ['resize-sensor-container'],
   didInsertElement() {
-    const element = this.element.children[0];
+    const element = this.element;
     this._resizeSensor = new ResizeSensor(element, () => {
       const onResize = this.get('onResize');
 

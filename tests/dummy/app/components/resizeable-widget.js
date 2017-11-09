@@ -1,6 +1,6 @@
 import Ember from 'ember';
-import { computed } from '@ember/object';
 import layout from '../templates/components/resizeable-widget';
+// import jqUI from 'jquery-ui';
 
 export default Ember.Component.extend({
   layout,
@@ -10,7 +10,7 @@ export default Ember.Component.extend({
     this._super(...arguments);
 
     const element = this.element;
-    this.$('#rezisable-widget').resizable({});
+    // this.$('#rezisable-widget').resizable({});
     this.sendAction('resize', element);
   }
 });
