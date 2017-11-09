@@ -18,10 +18,5 @@ export default Ember.Component.extend({
         this.sendAction('onResize', $element);
       }
     });
-  },
-  actions: {
-    resize($element) {
-      this.sendAction('resize', $element);
-    }
   }
 });
