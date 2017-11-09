@@ -1,10 +1,8 @@
-import Ember from 'ember';
-import layout from '../templates/components/resize-sensor';
+import Component from '@ember/component';
 
 import ResizeSensor from 'resize-sensor';
 
-export default Ember.Component.extend({
-  layout,
+export default Component.extend({
   classNames: ['resize-sensor-container'],
   didInsertElement() {
     const element = this.element;

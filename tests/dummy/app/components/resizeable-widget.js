@@ -1,16 +1,16 @@
-import Ember from 'ember';
-import layout from '../templates/components/resizeable-widget';
-import 'jquery-ui';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
-  layout,
+export default Component.extend({
   classNames: ['rezisable-widget-container'],
 
   didInsertElement() {
     this._super(...arguments);
 
     const element = this.element;
-    this.$('#rezisable-widget').resizable({});
+    this.$('#rezisable-widget').resizable({
+      minHeight: 150,
+      minWidth: 200
+    });
     this.sendAction('resize', element);
   }
 });

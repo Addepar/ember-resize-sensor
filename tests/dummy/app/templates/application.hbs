@@ -1,12 +1,9 @@
 <h2 id="title">Resize Sensor</h2>
 
-<h3>1.</h3>
-
-{{#resize-sensor onResize="resize"}}
-  {{#resizeable-widget resize="resize"}}
+{{#resizeable-widget resize="resize"}}
+  {{#resize-sensor onResize="resize"}}
     <h3 class="ui-widget-header">Size: {{size}}</h3>
-  {{/resizeable-widget}}
-{{/resize-sensor}}
-
+  {{/resize-sensor}}
+{{/resizeable-widget}}
 
 {{outlet}}
