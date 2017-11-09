@@ -9,8 +9,8 @@ export default Ember.Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    const $element = this.$();
+    const element = this.element;
     this.$('#rezisable-widget').resizable({});
-    this.sendAction('resize', $element);
+    this.sendAction('resize', element);
   }
 });
