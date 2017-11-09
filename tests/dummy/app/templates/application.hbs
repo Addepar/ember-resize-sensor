@@ -1,7 +1,12 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">Resize Sensor</h2>
+
+<h3>1.</h3>
 
 {{#resize-sensor onResize="resize"}}
-  <div class="resize-area"></div>
+  {{#resizeable-widget resize="resize"}}
+    <h3 class="ui-widget-header">Size: {{size}}</h3>
+  {{/resizeable-widget}}
 {{/resize-sensor}}
+
 
 {{outlet}}

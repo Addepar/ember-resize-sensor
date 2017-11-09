@@ -2,3 +2,13 @@
   padding: 16px;
   border: 1px solid #222;
 }
+
+.rezisable-widget-container {
+  display: inline-block;
+}
+
+#rezisable-widget { 
+  width: 200px; 
+  height: 150px; 
+  padding: 5px; 
+}

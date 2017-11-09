@@ -5,8 +5,9 @@ const ApplicationController = Controller.extend({
     resize(element) {
       const width = element.width();
       const height = element.height();
-      console.log(width, height);
-    }
+      const size = `${width} X ${height}`;
+      this.set('size', size);
+    },
   }
 });
 
