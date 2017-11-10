@@ -5,11 +5,18 @@ import ResizeSensor from 'resize-sensor';
 
 export default Component.extend({
   classNames: ['resize-sensor-container'],
+  _nextSendAction: null,
 
   didInsertElement() {
     const { element } = this;
     this._resizeSensor = new ResizeSensor(element, () => {
-      next(this, () => {
+      if (this._nextSendAction !== null) {
+        return;
+      }
+    
+      this._nextSendAction = next(() => {
+        this._nextSendAction = null;
+        
         const onResize = this.get('onResize');
         
         if (typeof onResize === 'function') {
