@@ -50,3 +50,4 @@ test('when the target changes sizes it will trigger the action', function(assert
   
     this.set('style', htmlSafe('width: 250px; height: 250px;'));
   });
+  
