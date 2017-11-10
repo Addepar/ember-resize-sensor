@@ -1,8 +1,6 @@
 import { htmlSafe } from "@ember/string";
-import { later } from "@ember/runloop"
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-import wait from 'ember-test-helpers/wait';
 
 moduleForComponent('resize-sensor', 'Integration | Component | resize sensor', {
   integration: true
@@ -35,12 +33,12 @@ test('when the target changes sizes it will trigger the action', function(assert
   
     this.set('style', htmlSafe('width: 500px; height: 500px;'));
   
-    let updated;
     this.on('resized', function(element){
-      updated = {
+      const updated = {
         width: element.offsetWidth,
         height: element.offsetHeight
-      }
+      };
+      assert.deepEqual(updated, { width: 250, height: 250 }, 'received updated size');
     });
   
     this.render(hbs`
@@ -51,10 +49,4 @@ test('when the target changes sizes it will trigger the action', function(assert
     `);
   
     this.set('style', htmlSafe('width: 250px; height: 250px;'));
-  
-    later(() => {
-      assert.deepEqual(updated, { width: 250, height: 250 }, 'received updated size');
-    }, 70);
-  
-    return wait();
   });
