@@ -4,6 +4,7 @@ import ResizeSensor from 'resize-sensor';
 
 export default Component.extend({
   classNames: ['resize-sensor-container'],
+
   didInsertElement() {
     const element = this.element;
     this._resizeSensor = new ResizeSensor(element, () => {
@@ -15,5 +16,12 @@ export default Component.extend({
         this.sendAction('onResize', element);
       }
     });
+  },
+
+  willDestroyElement() {
+    this._super(...arguments);
+    
+    const element = this.element;
+    this._resizeSensor.detach(element);
   }
 });
